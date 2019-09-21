@@ -1,0 +1,6 @@
+<ul>
+  <li *ngFor="let cliente of clientes" (click)="onSelect(cliente)">
+    <span>{{ cliente.nome }}</span>
+  </li>
+</ul>
+<app-cliente-info [cliente]="selectedCliente"></app-cliente-info>
