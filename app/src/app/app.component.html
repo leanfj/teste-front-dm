@@ -1,16 +1,8 @@
 <div class="wrapper">
   <div>
-    <app-search-bar></app-search-bar>
-    <app-lista-clientes
-      (clienteSelecionado)="onSelectedClient($event)"
-    ></app-lista-clientes>
-    <app-messages></app-messages>
+    <router-outlet></router-outlet>
   </div>
-
   <div>
     <h1>{{ title }}</h1>
-    <app-cliente-info [cliente]="selectedCliente"></app-cliente-info>
   </div>
 </div>
-
-<!-- <router-outlet></router-outlet> -->

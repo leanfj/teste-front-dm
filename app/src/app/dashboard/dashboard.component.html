@@ -1,0 +1,13 @@
+<app-search-bar></app-search-bar>
+
+<a
+  *ngFor="let cliente of clientes"
+  routerLink="/cliente/{{ cliente.codigo }}"
+  (click)="onSelect(cliente)"
+>
+  <div>
+    <h4>
+      {{ cliente.nome }}
+    </h4>
+  </div>
+</a>

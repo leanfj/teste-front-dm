@@ -7,6 +7,7 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { MessagesComponent } from './messages/messages.component';
     SearchBarComponent,
     ClienteInfoComponent,
     ListaClientesComponent,
-    MessagesComponent
+    MessagesComponent,
+    DashboardComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

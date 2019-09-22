@@ -12,5 +12,6 @@ export class AppComponent {
 
   onSelectedClient(event) {
     this.selectedCliente = event;
+    console.log(event);
   }
 }
