@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Cliente } from './cliente';
 
 @Component({
@@ -8,4 +8,9 @@ import { Cliente } from './cliente';
 })
 export class AppComponent {
   title = 'Fidelidade';
+  selectedCliente: Cliente;
+
+  onSelectedClient(event) {
+    this.selectedCliente = event;
+  }
 }

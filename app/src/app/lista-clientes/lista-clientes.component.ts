@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { CLIENTES } from '../mock-clientes';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Cliente } from '../cliente';
+import { ClienteService } from '../cliente.service';
 
 @Component({
   selector: 'app-lista-clientes',
@@ -8,15 +8,23 @@ import { Cliente } from '../cliente';
   styleUrls: ['./lista-clientes.component.sass']
 })
 export class ListaClientesComponent implements OnInit {
-  clientes = CLIENTES;
+  constructor(private clienteService: ClienteService) {}
 
-  selectedCliente: Cliente;
+  ngOnInit() {
+    this.getClientes();
+  }
 
-  constructor() {}
+  clientes: Cliente[];
 
-  ngOnInit() {}
+  @Output() clienteSelecionado = new EventEmitter();
 
-  onSelect(cliente: Cliente): void {
-    this.selectedCliente = cliente;
+  onSelect(cliente: any): void {
+    this.clienteSelecionado.emit(cliente);
+  }
+
+  getClientes(): void {
+    this.clienteService
+      .getClientes()
+      .subscribe(clientes => (this.clientes = clientes));
   }
 }

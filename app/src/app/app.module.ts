@@ -8,7 +8,12 @@ import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
 
 @NgModule({
-  declarations: [AppComponent, SearchBarComponent, ClienteInfoComponent, ListaClientesComponent],
+  declarations: [
+    AppComponent,
+    SearchBarComponent,
+    ClienteInfoComponent,
+    ListaClientesComponent
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
