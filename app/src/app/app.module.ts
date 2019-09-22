@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { ListaClientesComponent } from './lista-clientes/lista-clientes.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchBarComponent,
     ClienteInfoComponent,
-    ListaClientesComponent
+    ListaClientesComponent,
+    MessagesComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
