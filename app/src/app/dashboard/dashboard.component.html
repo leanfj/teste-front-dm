@@ -1,9 +1,11 @@
 <div>
-  <input type="text" />
-  <button>Pesquisar</button>
+  <input type="text" #searchBox (input)="search(searchBox.value)" />
 </div>
 
-<a *ngFor="let cliente of clientes" routerLink="/api/clientes/{{ cliente.id }}">
+<a
+  *ngFor="let cliente of clientes$ | async"
+  routerLink="/api/clientes/{{ cliente.id }}"
+>
   <div>
     <h4>
       {{ cliente.nome }}

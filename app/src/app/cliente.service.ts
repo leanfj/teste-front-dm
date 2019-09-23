@@ -47,4 +47,15 @@ export class ClienteService {
       catchError(this.handleError<Cliente>(`getCliente codigo=${codigo}`))
     );
   }
+
+  searchCliente(term: string): Observable<Cliente[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Cliente[]>(`${this.clientesUrl}/?nome=${term}`).pipe(
+      tap(_ => this.log(`Cliente encontrado com o nome ${term}`)),
+      catchError(this.handleError<Cliente[]>('searchCliente', []))
+    )
+  }
 }

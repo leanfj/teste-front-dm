@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteInfoComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClienteSearchComponent
   ],
   imports: [
     BrowserModule,
