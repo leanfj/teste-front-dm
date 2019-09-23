@@ -15,7 +15,7 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'cliente/:id',
+    path: 'api/clientes/:id',
     component: ClienteInfoComponent
   }
 ];

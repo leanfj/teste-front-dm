@@ -1,10 +1,9 @@
-<app-search-bar></app-search-bar>
+<div>
+  <input type="text" />
+  <button>Pesquisar</button>
+</div>
 
-<a
-  *ngFor="let cliente of clientes"
-  routerLink="/cliente/{{ cliente.codigo }}"
-  (click)="onSelect(cliente)"
->
+<a *ngFor="let cliente of clientes" routerLink="/api/clientes/{{ cliente.id }}">
   <div>
     <h4>
       {{ cliente.nome }}

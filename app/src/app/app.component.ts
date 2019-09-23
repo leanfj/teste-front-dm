@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Cliente } from './cliente';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +7,4 @@ import { Cliente } from './cliente';
 })
 export class AppComponent {
   title = 'Fidelidade';
-  selectedCliente: Cliente;
-
-  onSelectedClient(event) {
-    this.selectedCliente = event;
-    console.log(event);
-  }
 }

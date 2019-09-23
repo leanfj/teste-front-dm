@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../cliente';
 import { ClienteService } from '../cliente.service';
 
@@ -15,12 +15,6 @@ export class DashboardComponent implements OnInit {
   }
 
   clientes: Cliente[];
-
-  @Output() clienteSelecionado = new EventEmitter();
-
-  onSelect(cliente: any): void {
-    this.clienteSelecionado.emit(cliente);
-  }
 
   getClientes(): void {
     this.clienteService

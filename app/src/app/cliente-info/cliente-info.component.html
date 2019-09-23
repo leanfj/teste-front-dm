@@ -1,4 +1,33 @@
 <div *ngIf="cliente">
   <button (click)="goBack()">Voltar</button>
-  <h2>{{ cliente.nome }}</h2>
+  <div>
+    <img src="{{ cliente.thumb }}" alt="" />
+    <h2>{{ cliente.nome }}, {{ cliente.idade }} anos</h2>
+    <h2>CPF:{{ cliente.cpf }} Cód: {{ cliente.id }}</h2>
+  </div>
+  <hr />
+  <div>
+    <p>OBSERVAÇÕES IMPORTANTES</p>
+    <p>{{ cliente.obs }}</p>
+  </div>
+  <div>
+    <p>E-MAIL</p>
+    <p>{{ cliente.email }}</p>
+  </div>
+  <div>
+    <p>TELEFONE</p>
+    <p>
+      +{{ cliente.telefone.pais }} {{ cliente.telefone.area }}
+      {{ cliente.telefone.numero }}
+    </p>
+  </div>
+  <div>
+    <p>ENDEREÇO</p>
+    <p>
+      {{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }},
+      {{ cliente.endereco.numero }} - {{ cliente.endereco.bairro }} -
+      {{ cliente.endereco.Cep }} - {{ cliente.endereco.cidade }} -
+      {{ cliente.endereco.Estado }}
+    </p>
+  </div>
 </div>
