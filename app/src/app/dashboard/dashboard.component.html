@@ -1,9 +1,9 @@
 <div>
-  <input type="text" #searchBox (input)="search(searchBox.value)" />
+  <input type="text" #searchBox (input)="(searchBox.value)" />
 </div>
 
 <a
-  *ngFor="let cliente of clientes$ | async"
+  *ngFor="let cliente of clientes | filter: searchBox.value"
   routerLink="/api/clientes/{{ cliente.id }}"
 >
   <div>

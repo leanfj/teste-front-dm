@@ -10,15 +10,15 @@ import { AppComponent } from './app.component';
 import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { ClienteSearchComponent } from './cliente-search/cliente-search.component';
+
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteInfoComponent,
     MessagesComponent,
-    DashboardComponent,
-    ClienteSearchComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +26,8 @@ import { ClienteSearchComponent } from './cliente-search/cliente-search.componen
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
-    })
+    }),
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

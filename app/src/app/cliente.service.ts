@@ -56,6 +56,6 @@ export class ClienteService {
     return this.http.get<Cliente[]>(`${this.clientesUrl}/?nome=${term}`).pipe(
       tap(_ => this.log(`Cliente encontrado com o nome ${term}`)),
       catchError(this.handleError<Cliente[]>('searchCliente', []))
-    )
+    );
   }
 }
