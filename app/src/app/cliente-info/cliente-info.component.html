@@ -1,28 +1,53 @@
-<div *ngIf="cliente">
-  <button (click)="goBack()">Voltar</button>
-  <div>
-    <img src="{{ cliente.thumb }}" alt="" />
-    <h2>{{ cliente.nome }}, {{ cliente.idade }} anos</h2>
-    <h2>CPF:{{ cliente.cpf }} Cód: {{ cliente.id }}</h2>
+<div class="cliente">
+  <div class="cliente-infos">
+    <div (click)="goBack()" class="btn-voltar">
+      <svg
+        version="1.1"
+        id="Capa_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 31.494 31.494"
+        style="enable-background:new 0 0 31.494 31.494;"
+        xml:space="preserve"
+      >
+        <path
+          style="fill:#1E201D;"
+          d="M10.273,5.009c0.444-0.444,1.143-0.444,1.587,0c0.429,0.429,0.429,1.143,0,1.571l-8.047,8.047h26.554
+                  c0.619,0,1.127,0.492,1.127,1.111c0,0.619-0.508,1.127-1.127,1.127H3.813l8.047,8.032c0.429,0.444,0.429,1.159,0,1.587
+                  c-0.444,0.444-1.143,0.444-1.587,0l-9.952-9.952c-0.429-0.429-0.429-1.143,0-1.571L10.273,5.009z"
+        />
+      </svg>
+    </div>
+
+    <div class="cliente-dados">
+      <img class="cliente-foto" src="{{ cliente.thumb }}" alt="" />
+      <span class="cliente-nome-idade"
+        >{{ cliente.nome }}, {{ cliente.idade }} anos
+      </span>
+      <span class="cliente-cpf-id"
+        >CPF: {{ cliente.cpf }} - Cód: {{ cliente.id }}
+      </span>
+    </div>
   </div>
-  <hr />
-  <div>
-    <p>OBSERVAÇÕES IMPORTANTES</p>
+  <div class="caixa obsercacoes">
+    <h3>Observações Importantes</h3>
     <p>{{ cliente.obs }}</p>
   </div>
-  <div>
-    <p>E-MAIL</p>
+  <div class="caixa email">
+    <h3>E-mail</h3>
     <p>{{ cliente.email }}</p>
   </div>
-  <div>
-    <p>TELEFONE</p>
+  <div class="caixa telefone">
+    <h3>Telefone</h3>
     <p>
       +{{ cliente.telefone.pais }} {{ cliente.telefone.area }}
       {{ cliente.telefone.numero }}
     </p>
   </div>
-  <div>
-    <p>ENDEREÇO</p>
+  <div class="caixa endereco">
+    <h3>Endereço</h3>
     <p>
       {{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }},
       {{ cliente.endereco.numero }} - {{ cliente.endereco.bairro }} -
