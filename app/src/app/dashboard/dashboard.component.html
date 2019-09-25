@@ -1,14 +1,25 @@
-<div>
-  <input type="text" #searchBox (input)="(searchBox.value)" />
+<div class="busca">
+  <input
+    type="text"
+    #searchBox
+    (input)="(searchBox.value)"
+    placeholder="Pesquisar Cliente"
+  />
+  <a
+    *ngFor="let cliente of clientes | filter: searchBox.value"
+    routerLink="/api/clientes/{{ cliente.id }}"
+  >
+    <div class="cliente">
+      <div class="cliente-email">
+        {{ cliente.email }}
+      </div>
+      <div class="cliente-nome">
+        {{ cliente.nome }}
+      </div>
+      <div class="cliente-cpf">
+        {{ cliente.cpf }}
+      </div>
+    </div>
+    <hr />
+  </a>
 </div>
-
-<a
-  *ngFor="let cliente of clientes | filter: searchBox.value"
-  routerLink="/api/clientes/{{ cliente.id }}"
->
-  <div>
-    <h4>
-      {{ cliente.nome }}
-    </h4>
-  </div>
-</a>
