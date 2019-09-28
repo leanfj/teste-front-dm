@@ -13,6 +13,14 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+import { MatSidenavModule } from '@angular/material/sidenav';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatListModule } from '@angular/material/list';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +35,13 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     }),
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatIconModule,
+    MatButtonModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,9 @@
-<div class="wrapper">
-  <div>
+<mat-sidenav-container class="container" autosize="true">
+  <mat-sidenav class="sidenav" mode="side" opened>
     <router-outlet></router-outlet>
-  </div>
-  <div style="width: 100%">
+  </mat-sidenav>
+
+  <mat-sidenav-content>
     <h1>{{ title }}</h1>
-    <hr />
-  </div>
-</div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

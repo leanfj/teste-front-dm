@@ -1,25 +1,33 @@
-<div class="busca">
-  <input
+<!-- <input
     type="text"
     #searchBox
     (input)="(searchBox.value)"
     placeholder="Pesquisar Cliente"
-  />
+  /> -->
+<form class="form">
+  <mat-form-field class="full-width">
+    <input
+      matInput
+      #searchBox
+      placeholder="Pesquisar"
+      (input)="(searchBox.value)"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</form>
+<mat-nav-list>
   <a
-    *ngFor="let cliente of clientes | filter: searchBox.value"
+    *ngFor="let cliente of clientes | filter: searchBox.value; last as last"
     routerLink="/api/clientes/{{ cliente.id }}"
+    mat-list-item
   >
-    <div class="cliente">
-      <div class="cliente-email">
-        {{ cliente.email }}
-      </div>
-      <div class="cliente-nome">
-        {{ cliente.nome }}
-      </div>
-      <div class="cliente-cpf">
-        {{ cliente.cpf }}
-      </div>
+    <div matLine class="cliente-email">
+      {{ cliente.email }}
     </div>
-    <hr />
+    <div matLine class="cliente-nome">
+      {{ cliente.nome }}
+    </div>
+    <div matLine class="cliente-cpf">CPF - {{ cliente.cpf }}</div>
+    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
   </a>
-</div>
+</mat-nav-list>
