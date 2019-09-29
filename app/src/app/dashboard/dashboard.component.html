@@ -1,9 +1,3 @@
-<!-- <input
-    type="text"
-    #searchBox
-    (input)="(searchBox.value)"
-    placeholder="Pesquisar Cliente"
-  /> -->
 <form class="form">
   <mat-form-field class="full-width">
     <input
@@ -15,7 +9,7 @@
     <mat-icon matSuffix>search</mat-icon>
   </mat-form-field>
 </form>
-<mat-nav-list>
+<mat-nav-list style="background-color: #f4f5f7">
   <a
     *ngFor="let cliente of clientes | filter: searchBox.value; last as last"
     routerLink="/api/clientes/{{ cliente.id }}"
