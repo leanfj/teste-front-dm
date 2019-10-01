@@ -1,27 +1,33 @@
-<form class="form">
-  <mat-form-field class="full-width">
-    <input
-      matInput
-      #searchBox
-      placeholder="Pesquisar"
-      (input)="(searchBox.value)"
-    />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
-</form>
-<mat-nav-list style="background-color: #f4f5f7">
-  <a
-    *ngFor="let cliente of clientes | filter: searchBox.value; last as last"
-    routerLink="/api/clientes/{{ cliente.id }}"
-    mat-list-item
-  >
-    <div matLine class="cliente-email">
-      {{ cliente.email }}
-    </div>
-    <div matLine class="cliente-nome">
-      {{ cliente.nome }}
-    </div>
-    <div matLine class="cliente-cpf">CPF - {{ cliente.cpf }}</div>
-    <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
-  </a>
-</mat-nav-list>
+<mat-sidenav-container class="container" autosize="true">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <mat-form-field class="full-width">
+      <input
+        matInput
+        #searchBox
+        placeholder="Pesquisar"
+        (keyup)="applyFilter($event.target.value)"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-nav-list>
+      <a
+        *ngFor="let cliente of clientes | filter: filteredValue; last as last"
+        routerLink="/api/clientes/{{ cliente.id }}"
+        mat-list-item
+      >
+        <div matLine class="cliente-email">
+          {{ cliente.email }}
+        </div>
+        <div matLine class="cliente-nome">
+          {{ cliente.nome }}
+        </div>
+        <div matLine class="cliente-cpf">CPF - {{ cliente.cpf }}</div>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-cliente-transaction></app-cliente-transaction>
+  </mat-sidenav-content>
+</mat-sidenav-container>

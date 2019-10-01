@@ -10,24 +10,29 @@ import { AppComponent } from './app.component';
 import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ClienteTransactionComponent } from './cliente-transaction/cliente-transaction.component';
 
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
-import { MatSidenavModule } from '@angular/material/sidenav';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClienteInfoComponent,
     MessagesComponent,
-    DashboardComponent
+    DashboardComponent,
+    ClienteTransactionComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatIconModule,
     MatButtonModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    MatCardModule,
+    MatTabsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

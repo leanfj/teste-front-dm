@@ -1,0 +1,78 @@
+<div class="container">
+  <mat-card>
+    <mat-card-title>
+      {{ title }}
+    </mat-card-title>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Transações">
+          <div class="valores">
+            <mat-form-field>
+              <input matInput readonly placeholder="Saldo" value="123456" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput readonly placeholder="Histórico" value="123456" />
+            </mat-form-field>
+            <mat-form-field>
+              <input
+                matInput
+                readonly
+                placeholder="Utilizados"
+                value="123456"
+              />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput readonly placeholder="Perdidos" value="123456" />
+            </mat-form-field>
+          </div>
+          <div class="form-nota">
+            <mat-card-subtitle>Adicionar nota</mat-card-subtitle>
+            <mat-form-field class="nome-loja">
+              <input matInput placeholder="Loja" />
+              <mat-hint>Razão social, nome fantasia ou CNPJ</mat-hint>
+            </mat-form-field>
+            <div class="dados-nota">
+              <mat-form-field class="numero-nota">
+                <mat-label>Nº da nota</mat-label>
+
+                <input matInput />
+              </mat-form-field>
+              <mat-form-field class="data-nota">
+                <input matInput type="date" placeholder="Data da Nota" />
+              </mat-form-field>
+
+              <mat-form-field class="numero-nota">
+                <mat-label>Forma de pagamento</mat-label>
+                <mat-select value="Selecionar">
+                  <mat-option value="Dinheiro">Dinheiro</mat-option>
+                  <mat-option value="Débito">Débito</mat-option>
+                  <mat-option value="Crédito">Crédito</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <input
+                  matInput
+                  placeholder="Valor da Nota"
+                  type="number"
+                  class="right-align"
+                />
+                <span matPrefix>&#82;&#36;</span>
+              </mat-form-field>
+            </div>
+            <button mat-button>Cancelar</button>
+            <button mat-raised-button color="primary">Adicionar</button>
+          </div>
+          <div class="cadastrar-notas">
+            <mat-card-subtitle>Cadastrar notas</mat-card-subtitle>
+            <mat-hint
+              >Você precisa confirmar o cadastro dessa lista de notas</mat-hint
+            >
+          </div>
+        </mat-tab>
+        <mat-tab label="Benefícios"> Content 2 </mat-tab>
+        <mat-tab label="Hitórico"> Content 3 </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

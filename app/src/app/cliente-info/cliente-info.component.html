@@ -1,41 +1,48 @@
-<div class="cliente">
-  <div class="cliente-infos">
-    <div (click)="goBack()" class="btn-voltar">
-      <mat-icon>arrow_back</mat-icon>
-    </div>
+<mat-sidenav-container class="container" autosize="true">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <div class="cliente">
+      <div class="cliente-infos">
+        <div (click)="goBack()" class="btn-voltar">
+          <mat-icon>arrow_back</mat-icon>
+        </div>
 
-    <div class="cliente-dados">
-      <img class="cliente-foto" src="{{ cliente.thumb }}" alt="" />
-      <span class="cliente-nome-idade"
-        >{{ cliente.nome }}, {{ cliente.idade }} anos
-      </span>
-      <span class="cliente-cpf-id"
-        >CPF: {{ cliente.cpf }} - Cód: {{ cliente.id }}
-      </span>
+        <div class="cliente-dados">
+          <img class="cliente-foto" src="{{ cliente.thumb }}" alt="" />
+          <span class="cliente-nome-idade"
+            >{{ cliente.nome }}, {{ cliente.idade }} anos
+          </span>
+          <span class="cliente-cpf-id"
+            >CPF: {{ cliente.cpf }} - Cód: {{ cliente.id }}
+          </span>
+        </div>
+      </div>
+      <div class="caixa obsercacoes">
+        <h3>Observações Importantes</h3>
+        <p>{{ cliente.obs }}</p>
+      </div>
+      <div class="caixa email">
+        <h3>E-mail</h3>
+        <p>{{ cliente.email }}</p>
+      </div>
+      <div class="caixa telefone">
+        <h3>Telefone</h3>
+        <p>
+          +{{ cliente.telefone.pais }} {{ cliente.telefone.area }}
+          {{ cliente.telefone.numero }}
+        </p>
+      </div>
+      <div class="caixa endereco">
+        <h3>Endereço</h3>
+        <p>
+          {{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }},
+          {{ cliente.endereco.numero }} - {{ cliente.endereco.bairro }} -
+          {{ cliente.endereco.Cep }} - {{ cliente.endereco.cidade }} -
+          {{ cliente.endereco.Estado }}
+        </p>
+      </div>
     </div>
-  </div>
-  <div class="caixa obsercacoes">
-    <h3>Observações Importantes</h3>
-    <p>{{ cliente.obs }}</p>
-  </div>
-  <div class="caixa email">
-    <h3>E-mail</h3>
-    <p>{{ cliente.email }}</p>
-  </div>
-  <div class="caixa telefone">
-    <h3>Telefone</h3>
-    <p>
-      +{{ cliente.telefone.pais }} {{ cliente.telefone.area }}
-      {{ cliente.telefone.numero }}
-    </p>
-  </div>
-  <div class="caixa endereco">
-    <h3>Endereço</h3>
-    <p>
-      {{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }},
-      {{ cliente.endereco.numero }} - {{ cliente.endereco.bairro }} -
-      {{ cliente.endereco.Cep }} - {{ cliente.endereco.cidade }} -
-      {{ cliente.endereco.Estado }}
-    </p>
-  </div>
-</div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-cliente-transaction></app-cliente-transaction>
+  </mat-sidenav-content>
+</mat-sidenav-container>
