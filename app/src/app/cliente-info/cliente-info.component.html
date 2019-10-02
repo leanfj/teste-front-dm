@@ -7,37 +7,37 @@
         </div>
 
         <div class="cliente-dados">
-          <img class="cliente-foto" src="{{ cliente.thumb }}" alt="" />
+          <img class="cliente-foto" src="{{ cliente?.thumb }}" alt="" />
           <span class="cliente-nome-idade"
-            >{{ cliente.nome }}, {{ cliente.idade }} anos
+            >{{ cliente?.nome }}, {{ cliente?.idade }} anos
           </span>
           <span class="cliente-cpf-id"
-            >CPF: {{ cliente.cpf }} - Cód: {{ cliente.id }}
+            >CPF: {{ cliente?.cpf }} - Cód: {{ cliente?.id }}
           </span>
         </div>
       </div>
       <div class="caixa obsercacoes">
         <h3>Observações Importantes</h3>
-        <p>{{ cliente.obs }}</p>
+        <p>{{ cliente?.obs }}</p>
       </div>
       <div class="caixa email">
         <h3>E-mail</h3>
-        <p>{{ cliente.email }}</p>
+        <p>{{ cliente?.email }}</p>
       </div>
       <div class="caixa telefone">
         <h3>Telefone</h3>
         <p>
-          +{{ cliente.telefone.pais }} {{ cliente.telefone.area }}
-          {{ cliente.telefone.numero }}
+          +{{ cliente?.telefone.pais }} {{ cliente?.telefone.area }}
+          {{ cliente?.telefone.numero }}
         </p>
       </div>
       <div class="caixa endereco">
         <h3>Endereço</h3>
         <p>
-          {{ cliente.endereco.tipo }} {{ cliente.endereco.logradouro }},
-          {{ cliente.endereco.numero }} - {{ cliente.endereco.bairro }} -
-          {{ cliente.endereco.Cep }} - {{ cliente.endereco.cidade }} -
-          {{ cliente.endereco.Estado }}
+          {{ cliente?.endereco.tipo }} {{ cliente?.endereco.logradouro }},
+          {{ cliente?.endereco.numero }} - {{ cliente?.endereco.bairro }} -
+          {{ cliente?.endereco.Cep }} - {{ cliente?.endereco.cidade }} -
+          {{ cliente?.endereco.Estado }}
         </p>
       </div>
     </div>

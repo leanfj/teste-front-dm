@@ -9,42 +9,68 @@
         <mat-tab label="Transações">
           <div class="valores">
             <mat-form-field>
-              <input matInput readonly placeholder="Saldo" value="123456" />
+              <input
+                matInput
+                readonly
+                placeholder="Saldo"
+                value="{{ cliente?.pontos.total | currency: ' ':' ':'1.2-2' }}"
+              />
             </mat-form-field>
             <mat-form-field>
-              <input matInput readonly placeholder="Histórico" value="123456" />
+              <input
+                matInput
+                readonly
+                placeholder="Histórico"
+                value="{{
+                  cliente?.pontos.historico | currency: ' ':' ':'1.2-2'
+                }}"
+              />
             </mat-form-field>
             <mat-form-field>
               <input
                 matInput
                 readonly
                 placeholder="Utilizados"
-                value="123456"
+                value="{{
+                  cliente?.pontos.utilizados | currency: ' ':' ':'1.2-2'
+                }}"
               />
             </mat-form-field>
             <mat-form-field>
-              <input matInput readonly placeholder="Perdidos" value="123456" />
+              <input
+                matInput
+                readonly
+                placeholder="Perdidos"
+                value="{{
+                  cliente?.pontos.expirados | currency: ' ':' ':'1.2-2'
+                }}"
+              />
             </mat-form-field>
           </div>
           <div class="form-nota">
-            <mat-card-subtitle>Adicionar nota</mat-card-subtitle>
+            <h3>Adicionar nota</h3>
             <mat-form-field class="nome-loja">
-              <input matInput placeholder="Loja" />
+              <input matInput placeholder="Loja" #nomeLoja />
               <mat-hint>Razão social, nome fantasia ou CNPJ</mat-hint>
             </mat-form-field>
             <div class="dados-nota">
               <mat-form-field class="numero-nota">
                 <mat-label>Nº da nota</mat-label>
 
-                <input matInput />
+                <input matInput #numeroNota />
               </mat-form-field>
               <mat-form-field class="data-nota">
-                <input matInput type="date" placeholder="Data da Nota" />
+                <input
+                  matInput
+                  type="date"
+                  placeholder="Data da Nota"
+                  #dataNota
+                />
               </mat-form-field>
 
               <mat-form-field class="numero-nota">
                 <mat-label>Forma de pagamento</mat-label>
-                <mat-select value="Selecionar">
+                <mat-select value="Selecionar" #formaPagamento>
                   <mat-option value="Dinheiro">Dinheiro</mat-option>
                   <mat-option value="Débito">Débito</mat-option>
                   <mat-option value="Crédito">Crédito</mat-option>
@@ -56,18 +82,90 @@
                   placeholder="Valor da Nota"
                   type="number"
                   class="right-align"
+                  #valorNota
                 />
                 <span matPrefix>&#82;&#36;</span>
               </mat-form-field>
             </div>
             <button mat-button>Cancelar</button>
-            <button mat-raised-button color="primary">Adicionar</button>
+            <button
+              mat-raised-button
+              color="primary"
+              (click)="
+                addNota(
+                  nomeLoja,
+                  numeroNota,
+                  dataNota,
+                  formaPagamento,
+                  valorNota
+                )
+              "
+            >
+              Adicionar
+            </button>
           </div>
           <div class="cadastrar-notas">
-            <mat-card-subtitle>Cadastrar notas</mat-card-subtitle>
+            <h3>Cadastrar notas</h3>
             <mat-hint
               >Você precisa confirmar o cadastro dessa lista de notas</mat-hint
             >
+            <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+              <ng-container matColumnDef="loja">
+                <mat-header-cell *matHeaderCellDef> Loja </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.loja }}
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="nota">
+                <mat-header-cell *matHeaderCellDef>
+                  Nº da nota
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.nota }}
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="data">
+                <mat-header-cell *matHeaderCellDef>
+                  Data da Nota
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.data }}
+                </mat-cell>
+              </ng-container>
+
+              <ng-container matColumnDef="dataCadastro">
+                <mat-header-cell *matHeaderCellDef>
+                  Data de cadastro
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.dataCadastro }}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="valor">
+                <mat-header-cell *matHeaderCellDef>
+                  Valor
+                </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  {{ element.valor }}
+                </mat-cell>
+              </ng-container>
+              <ng-container matColumnDef="mais">
+                <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                  <mat-icon>more_vert</mat-icon>
+                </mat-cell>
+              </ng-container>
+              <mat-header-row
+                *matHeaderRowDef="displayedColumns"
+              ></mat-header-row>
+              <mat-row
+                *matRowDef="let row; columns: displayedColumns"
+              ></mat-row>
+            </mat-table>
+            <button mat-button>Cancelar</button>
+            <button mat-raised-button color="primary">Cadastrar</button>
           </div>
         </mat-tab>
         <mat-tab label="Benefícios"> Content 2 </mat-tab>

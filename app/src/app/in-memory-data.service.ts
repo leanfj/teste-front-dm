@@ -36,6 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 189247.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -66,7 +67,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 1892.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -97,7 +99,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 1897.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -128,7 +131,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 189471247.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -159,7 +163,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 19247.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -190,7 +195,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 189997.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -221,7 +227,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 1847.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -252,7 +259,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 9247.73,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -283,7 +291,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 189247,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }
@@ -314,7 +323,8 @@ export class InMemoryDataService implements InMemoryDbService {
         obs:
           'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
-          total: 189247.73,
+          total: 189273,
+          historico: 54852,
           utilizados: 109000,
           expirados: 78000
         }

@@ -24,6 +24,7 @@ export class Cliente {
   obs: string;
   pontos: {
     total: number;
+    historico: number;
     utilizados: number;
     expirados: number;
   };
