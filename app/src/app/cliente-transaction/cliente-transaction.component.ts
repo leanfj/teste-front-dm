@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Cliente } from '../cliente';
 import { MatTable } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cliente-transaction',
@@ -18,7 +19,8 @@ export class ClienteTransactionComponent implements OnInit {
 
   constructor(
     private clienteService: ClienteService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private _snackBar: MatSnackBar
   ) {}
 
   ngOnInit() {
@@ -51,6 +53,37 @@ export class ClienteTransactionComponent implements OnInit {
     dataNota.value = '';
     formaPagamento.value = '';
     valorNota.value = '';
+  }
+
+  clearNota(nomeLoja, numeroNota, dataNota, formaPagamento, valorNota) {
+    nomeLoja.value = '';
+    numeroNota.value = '';
+    dataNota.value = '';
+    formaPagamento.value = '';
+    valorNota.value = '';
+  }
+
+  sendNotas() {
+    if (this.dataSource.length > 0) {
+      const id = +this.route.snapshot.paramMap.get('id');
+      this.clienteService.addNotas({ nota: this.dataSource, id });
+      this._snackBar.open('Notas Cadastradas', 'Fechar', {
+        duration: 3000
+      });
+      setTimeout(() => {
+        this.dataSource.length = 0;
+        this.table.renderRows();
+      }, 3000);
+    } else {
+      this._snackBar.open('Favor incluir notas', 'Fechar', {
+        duration: 1500
+      });
+    }
+  }
+
+  clearNotas() {
+    this.dataSource.length = 0;
+    this.table.renderRows();
   }
 
   getCliente(): void {

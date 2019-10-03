@@ -16,13 +16,13 @@
         routerLink="/api/clientes/{{ cliente.id }}"
         mat-list-item
       >
-        <div matLine class="cliente-email">
+        <div matLine id="cliente-email">
           {{ cliente.email }}
         </div>
-        <div matLine class="cliente-nome">
+        <div matLine id="cliente-nome">
           {{ cliente.nome }}
         </div>
-        <div matLine class="cliente-cpf">CPF - {{ cliente.cpf }}</div>
+        <div matLine id="cliente-cpf">CPF - {{ cliente.cpf }}</div>
         <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
       </a>
     </mat-nav-list>

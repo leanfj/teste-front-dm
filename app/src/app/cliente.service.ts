@@ -47,4 +47,8 @@ export class ClienteService {
       catchError(this.handleError<Cliente>(`getCliente codigo=${codigo}`))
     );
   }
+
+  addNotas(nota) {
+    return this.http.post(this.clientesUrl, nota);
+  }
 }

@@ -330,6 +330,9 @@ export class InMemoryDataService implements InMemoryDbService {
         }
       }
     ];
-    return { clientes };
+
+    const notas = [];
+
+    return { clientes, notas };
   }
 }

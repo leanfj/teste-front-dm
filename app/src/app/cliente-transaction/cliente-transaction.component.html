@@ -50,14 +50,23 @@
           <div class="form-nota">
             <h3>Adicionar nota</h3>
             <mat-form-field class="nome-loja">
-              <input matInput placeholder="Loja" #nomeLoja />
+              <input
+                matInput
+                placeholder="Loja"
+                #nomeLoja
+                disabled="{{ !cliente ? true : false }}"
+              />
               <mat-hint>Razão social, nome fantasia ou CNPJ</mat-hint>
             </mat-form-field>
             <div class="dados-nota">
               <mat-form-field class="numero-nota">
                 <mat-label>Nº da nota</mat-label>
 
-                <input matInput #numeroNota />
+                <input
+                  matInput
+                  #numeroNota
+                  disabled="{{ !cliente ? true : false }}"
+                />
               </mat-form-field>
               <mat-form-field class="data-nota">
                 <input
@@ -65,12 +74,17 @@
                   type="date"
                   placeholder="Data da Nota"
                   #dataNota
+                  disabled="{{ !cliente ? true : false }}"
                 />
               </mat-form-field>
 
               <mat-form-field class="numero-nota">
                 <mat-label>Forma de pagamento</mat-label>
-                <mat-select value="Selecionar" #formaPagamento>
+                <mat-select
+                  value="Selecionar"
+                  #formaPagamento
+                  disabled="{{ !cliente ? true : false }}"
+                >
                   <mat-option value="Dinheiro">Dinheiro</mat-option>
                   <mat-option value="Débito">Débito</mat-option>
                   <mat-option value="Crédito">Crédito</mat-option>
@@ -83,14 +97,30 @@
                   type="number"
                   class="right-align"
                   #valorNota
+                  disabled="{{ !cliente ? true : false }}"
                 />
-                <span matPrefix>&#82;&#36;</span>
+                <span matPrefix>&#82;&#36; </span>
               </mat-form-field>
             </div>
             <div class="actions">
-              <button mat-button>Cancelar</button>
+              <button
+                mat-button
+                disabled="{{ !cliente ? true : false }}"
+                (click)="
+                  clearNota(
+                    nomeLoja,
+                    numeroNota,
+                    dataNota,
+                    formaPagamento,
+                    valorNota
+                  )
+                "
+              >
+                Cancelar
+              </button>
               <button
                 mat-raised-button
+                disabled="{{ !cliente ? true : false }}"
                 color="primary"
                 (click)="
                   addNota(
@@ -150,7 +180,7 @@
                   Valor
                 </mat-header-cell>
                 <mat-cell *matCellDef="let element">
-                  {{ element.valor }}
+                  {{ element.valor | currency: 'BRL':true }}
                 </mat-cell>
               </ng-container>
               <ng-container matColumnDef="mais">
@@ -167,8 +197,12 @@
               ></mat-row>
             </mat-table>
             <div class="actions">
-              <button mat-button>Cancelar</button>
-              <button mat-raised-button color="primary">Cadastrar</button>
+              <button mat-button (click)="clearNotas()">
+                Cancelar
+              </button>
+              <button mat-raised-button color="primary" (click)="sendNotas()">
+                Cadastrar
+              </button>
             </div>
           </div>
         </mat-tab>
