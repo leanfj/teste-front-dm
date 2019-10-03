@@ -87,22 +87,24 @@
                 <span matPrefix>&#82;&#36;</span>
               </mat-form-field>
             </div>
-            <button mat-button>Cancelar</button>
-            <button
-              mat-raised-button
-              color="primary"
-              (click)="
-                addNota(
-                  nomeLoja,
-                  numeroNota,
-                  dataNota,
-                  formaPagamento,
-                  valorNota
-                )
-              "
-            >
-              Adicionar
-            </button>
+            <div class="actions">
+              <button mat-button>Cancelar</button>
+              <button
+                mat-raised-button
+                color="primary"
+                (click)="
+                  addNota(
+                    nomeLoja,
+                    numeroNota,
+                    dataNota,
+                    formaPagamento,
+                    valorNota
+                  )
+                "
+              >
+                Adicionar
+              </button>
+            </div>
           </div>
           <div class="cadastrar-notas">
             <h3>Cadastrar notas</h3>
@@ -164,8 +166,10 @@
                 *matRowDef="let row; columns: displayedColumns"
               ></mat-row>
             </mat-table>
-            <button mat-button>Cancelar</button>
-            <button mat-raised-button color="primary">Cadastrar</button>
+            <div class="actions">
+              <button mat-button>Cancelar</button>
+              <button mat-raised-button color="primary">Cadastrar</button>
+            </div>
           </div>
         </mat-tab>
         <mat-tab label="Benefícios"> Content 2 </mat-tab>
