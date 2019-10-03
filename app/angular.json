@@ -24,10 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": [
-              "src/styles.sass",
-              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css"
-            ],
+            "styles": ["src/styles.sass", "src/meu-tema.sass"],
             "scripts": []
           },
           "configurations": {
