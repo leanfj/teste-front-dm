@@ -1,25 +1,33 @@
-<div class="busca">
-  <input
-    type="text"
-    #searchBox
-    (input)="(searchBox.value)"
-    placeholder="Pesquisar Cliente"
-  />
-  <a
-    *ngFor="let cliente of clientes | filter: searchBox.value"
-    routerLink="/api/clientes/{{ cliente.id }}"
-  >
-    <div class="cliente">
-      <div class="cliente-email">
-        {{ cliente.email }}
-      </div>
-      <div class="cliente-nome">
-        {{ cliente.nome }}
-      </div>
-      <div class="cliente-cpf">
-        {{ cliente.cpf }}
-      </div>
-    </div>
-    <hr />
-  </a>
-</div>
+<mat-sidenav-container class="container" autosize="true">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <mat-form-field class="full-width">
+      <input
+        matInput
+        #searchBox
+        placeholder="Pesquisar"
+        (keyup)="applyFilter($event.target.value)"
+      />
+      <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+
+    <mat-nav-list>
+      <a
+        *ngFor="let cliente of clientes | filter: filteredValue; last as last"
+        routerLink="/api/clientes/{{ cliente.id }}"
+        mat-list-item
+      >
+        <div matLine id="cliente-email">
+          {{ cliente.email }}
+        </div>
+        <div matLine id="cliente-nome">
+          {{ cliente.nome }}
+        </div>
+        <div matLine id="cliente-cpf">CPF - {{ cliente.cpf }}</div>
+        <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-cliente-transaction></app-cliente-transaction>
+  </mat-sidenav-content>
+</mat-sidenav-container>

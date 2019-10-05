@@ -12,7 +12,7 @@ import { Cliente } from '../cliente';
   styleUrls: ['./cliente-info.component.sass']
 })
 export class ClienteInfoComponent implements OnInit {
-  @Input() cliente: Cliente;
+  cliente: Cliente;
 
   constructor(
     private route: ActivatedRoute,

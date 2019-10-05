@@ -22,4 +22,10 @@ export class DashboardComponent implements OnInit {
       .getClientes()
       .subscribe(clientes => (this.clientes = clientes));
   }
+
+  filteredValue: string = '';
+
+  applyFilter(filterValue: string) {
+    this.filteredValue = filterValue.trim().toLowerCase();
+  }
 }

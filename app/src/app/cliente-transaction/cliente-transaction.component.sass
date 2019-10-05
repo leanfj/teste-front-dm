@@ -1,0 +1,59 @@
+.container
+  height: 100%
+mat-card
+  padding: 0px 5px 0 5px
+  border-radius: 0
+  box-shadow: 0 0 0 0
+  mat-card-title
+    font-size: 20px
+    padding-top: 10px
+    margin-left: 20px
+.valores
+  margin-top: 10px
+  mat-form-field
+    padding: 0 5px 0 5px
+    width:100px
+.form-nota
+  width: 768px
+  @media screen and (max-width: 768px)
+    width: 550px
+  h3
+    font-size: 13px
+  .nome-loja
+    width: 100%
+  .dados-nota
+    display: flex
+    justify-content: space-between
+    align-items: center
+    mat-form-field
+      padding: 5px 5px 5px 0
+      @media screen and (max-width: 768px)
+        width: 125px
+.cadastrar-notas
+  width: 768px
+  margin-bottom: 20px
+  @media screen and (max-width: 768px)
+    width: 550px
+  h3
+    font-size: 13px
+  mat-table
+    margin-top: 20px
+    margin-bottom: 40px
+    box-shadow: 0 0 0 0
+.mat-header-cell
+  background-color: #f4f5f7
+  color: #000
+  &:last-of-type
+    padding-right: 0
+
+.mat-cell:last-of-type
+  justify-content: flex-end
+  padding-right: 0
+
+.actions
+  display: flex
+  justify-content: flex-end
+  .mat-primary
+    color: #ffffff
+  button
+    margin-right: 10px
