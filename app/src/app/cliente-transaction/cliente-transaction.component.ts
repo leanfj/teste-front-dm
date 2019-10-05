@@ -38,21 +38,32 @@ export class ClienteTransactionComponent implements OnInit {
   dataSource = [];
 
   addNota(nomeLoja, numeroNota, dataNota, formaPagamento, valorNota): void {
-    this.dataSource.push({
-      loja: nomeLoja.value,
-      nota: numeroNota.value,
-      data: new Date(dataNota.value).toLocaleDateString('pt-BR'),
-      dataCadastro: new Date().toLocaleDateString('pt-BR'),
-      valor: valorNota.value
-    });
+    if (
+      !nomeLoja.value ||
+      !numeroNota.value ||
+      !formaPagamento.value ||
+      !valorNota.value
+    ) {
+      this._snackBar.open('Favor preencher todos o campos', 'Fechar', {
+        duration: 1500
+      });
+    } else {
+      this.dataSource.push({
+        loja: nomeLoja.value,
+        nota: numeroNota.value,
+        data: new Date(dataNota.value).toLocaleDateString('pt-BR'),
+        dataCadastro: new Date().toLocaleDateString('pt-BR'),
+        valor: valorNota.value
+      });
 
-    this.table.renderRows();
+      this.table.renderRows();
 
-    nomeLoja.value = '';
-    numeroNota.value = '';
-    dataNota.value = '';
-    formaPagamento.value = '';
-    valorNota.value = '';
+      nomeLoja.value = '';
+      numeroNota.value = '';
+      dataNota.value = '';
+      formaPagamento.value = '';
+      valorNota.value = '';
+    }
   }
 
   clearNota(nomeLoja, numeroNota, dataNota, formaPagamento, valorNota) {
