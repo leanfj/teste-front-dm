@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import localePt from '@angular/common/locales/pt';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,10 +11,9 @@ import { ClienteInfoComponent } from './cliente-info/cliente-info.component';
 import { MessagesComponent } from './messages/messages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ClienteTransactionComponent } from './cliente-transaction/cliente-transaction.component';
-import { InMemoryDataService } from './in-memory-data.service';
 
+import { InMemoryDataService } from './in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -40,13 +40,13 @@ registerLocaleData(localePt);
     ClienteTransactionComponent
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
     }),
-    Ng2SearchPipeModule,
     MatSidenavModule,
     BrowserAnimationsModule,
     MatInputModule,
