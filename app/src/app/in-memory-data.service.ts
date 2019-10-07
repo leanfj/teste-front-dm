@@ -65,7 +65,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sr. Antonio Marques estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 1892.73,
           historico: 54852,
@@ -97,7 +97,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sr. João Sousa estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 1897.73,
           historico: 54852,
@@ -129,7 +129,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sr. Armando Jogada estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 189471247.73,
           historico: 54852,
@@ -161,7 +161,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sra. Jordência Sexta estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 19247.73,
           historico: 54852,
@@ -193,7 +193,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sra. Kelly Guissa estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 189997.73,
           historico: 54852,
@@ -203,8 +203,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 7,
-        nome: 'Kelly Guissa',
-        email: 'salsich@obig.net',
+        nome: 'Paula Lima',
+        email: 'plima@obig.net',
         cpf: '67890123456',
         idade: 32,
         endereco: {
@@ -225,7 +225,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sra. Paula Lima estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 1847.73,
           historico: 54852,
@@ -235,8 +235,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 8,
-        nome: 'Kelly Guissa',
-        email: 'salsich@obig.net',
+        nome: 'Carlos Teixiera',
+        email: 'calostex@obig.net',
         cpf: '67890123456',
         idade: 32,
         endereco: {
@@ -257,7 +257,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sr. Carlos Teixiera estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 9247.73,
           historico: 54852,
@@ -267,8 +267,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 9,
-        nome: 'Kelly Guissa',
-        email: 'salsich@obig.net',
+        nome: 'Samara Pina',
+        email: 'sampi@obig.net',
         cpf: '67890123456',
         idade: 32,
         endereco: {
@@ -289,7 +289,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sra. Samara Pina estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 189247,
           historico: 54852,
@@ -299,8 +299,8 @@ export class InMemoryDataService implements InMemoryDbService {
       },
       {
         id: 10,
-        nome: 'Kelly Guissa',
-        email: 'salsich@obig.net',
+        nome: 'Barbara Sintra',
+        email: 'bsintra@obig.net',
         cpf: '67890123456',
         idade: 32,
         endereco: {
@@ -321,7 +321,7 @@ export class InMemoryDataService implements InMemoryDbService {
         },
         thumb: 'http://loremflickr.com/g/150/150/face?random=1',
         obs:
-          'No último atendimento, o Sr. Paulo estava bastante irritado com a demora no cadastro das notas fiscais.',
+          'No último atendimento, o Sra. Barbara Sintra estava bastante irritado com a demora no cadastro das notas fiscais.',
         pontos: {
           total: 189273,
           historico: 54852,
