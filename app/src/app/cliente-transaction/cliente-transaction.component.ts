@@ -13,6 +13,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class ClienteTransactionComponent implements OnInit {
   title: string = 'Fidelidade';
+
   cliente: Cliente;
 
   @ViewChild(MatTable, { static: true }) table: MatTable<any>;

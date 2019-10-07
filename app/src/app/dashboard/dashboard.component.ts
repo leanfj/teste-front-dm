@@ -16,6 +16,7 @@ export class DashboardComponent implements OnInit {
   }
 
   clientes: Cliente[];
+  filtro: string = '';
 
   getClientes(): void {
     this.clienteService
@@ -23,9 +24,36 @@ export class DashboardComponent implements OnInit {
       .subscribe(clientes => (this.clientes = clientes));
   }
 
-  filteredValue: string = '';
+  filtrarCliente() {
+    if (this.filtro === undefined || this.filtro.trim() === '') {
+      return this.clientes;
+    }
 
-  applyFilter(filterValue: string) {
-    this.filteredValue = filterValue.trim().toLowerCase();
+    const toCompare = this.filtro.toLowerCase();
+
+    function checkInside(item: any, term: string) {
+      for (let property in item) {
+        if (item[property] === null || item[property] == undefined) {
+          continue;
+        }
+        if (typeof item[property] === 'object') {
+          if (checkInside(item[property], term)) {
+            return true;
+          }
+        } else if (
+          item[property]
+            .toString()
+            .toLowerCase()
+            .includes(toCompare)
+        ) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    return this.clientes.filter((item: any) => {
+      return checkInside(item, this.filtro.toLowerCase());
+    });
   }
 }

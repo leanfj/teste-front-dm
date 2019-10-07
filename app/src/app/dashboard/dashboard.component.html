@@ -1,18 +1,13 @@
 <mat-sidenav-container class="container" autosize="true">
   <mat-sidenav class="sidenav" mode="side" opened [disableClose]="true">
     <mat-form-field class="full-width">
-      <input
-        matInput
-        #searchBox
-        placeholder="Pesquisar"
-        (keyup)="applyFilter($event.target.value)"
-      />
+      <input matInput #searchBox placeholder="Pesquisar" [(ngModel)]="filtro" />
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
 
     <mat-nav-list>
       <a
-        *ngFor="let cliente of clientes | filter: filteredValue; last as last"
+        *ngFor="let cliente of filtrarCliente(); last as last"
         routerLink="/api/clientes/{{ cliente.id }}"
         mat-list-item
       >
